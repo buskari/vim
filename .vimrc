@@ -5,7 +5,7 @@ endif
 
 syntax on
 set cursorline
-colorscheme onehalflight
+colorscheme onehalfdark
 " let g:airline_theme='onehalfdark'
 " lightline
 let g:lightline = { 'colorscheme': 'onehalfdark' }
@@ -99,6 +99,8 @@ set laststatus=2
         Plug 'preservim/nerdtree'
         Plug 'sonph/onehalf', { 'rtp': 'vim' }
         Plug 'itchyny/lightline.vim'
+        Plug 'dyng/ctrlsf.vim'
+        Plug 'vim-test/vim-test'
     call plug#end()
 " }}}
 " MAPPINGS --------------------------------------------------------------- {{{
@@ -137,10 +139,14 @@ set laststatus=2
 
     " Resize split windows using arrow keys by pressing:
     " CTRL+UP, CTRL+DOWN, CTRL+LEFT, or CTRL+RIGHT.
-    noremap <c-up> <c-w>+
-    noremap <c-down> <c-w>-
-    noremap <c-left> <c-w>>
-    noremap <c-right> <c-w><
+    " noremap <c-up> <c-w>+
+    " noremap <c-down> <c-w>-
+    " noremap <c-left> <c-w>>
+    " noremap <c-right> <c-w><
+    nnoremap <Down>    :resize -1<CR>
+    nnoremap <UP>  :resize +1<CR>
+    nnoremap <Left>  :vertical resize -1<CR>
+    nnoremap <Right> :vertical resize +1<CR>"
 
     " NERDTree specific mappings.
     " Map the F3 key to toggle NERDTree open and close.
